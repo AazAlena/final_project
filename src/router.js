@@ -4,7 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 // Компоненты страниц
 import AllPer from './views/AllPer.vue';
 import OnlyMusicals from './views/OnlyMusicals.vue';
-
+import OnlyPlay from './views/OnlyPlay.vue';
 
 export default createRouter({
     // История переходов сохраняется
@@ -22,6 +22,11 @@ export default createRouter({
             path: '/musicals',
             name: 'mus',
             component: OnlyMusicals
+        },
+        {
+            path: '/musicals',
+            name: 'play',
+            component: OnlyPlay
         }
     ]
 })

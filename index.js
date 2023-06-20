@@ -53,3 +53,8 @@ app.get('/musicals/all', async function (req, res) {
     let response = await Performance.find({type: 'musical'})
     res.send(response)
 })
+
+app.get('/plays/all', async function (req, res) {
+    let response = await Performance.find({type: 'play'})
+    res.send(response)
+})
