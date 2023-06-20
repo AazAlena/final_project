@@ -19,6 +19,9 @@ export default {
         },
         day(date){
             return dayjs(date)
+        },
+        async buy(){
+            
         }
         
     }, 
@@ -44,7 +47,7 @@ export default {
                     <p class="card-text">{{item.type}}</p>
                     <div class="row">
                         <p class="card-text"><small class="text-muted">{{day(item.date)}}</small></p>
-                        <button class="btn btn-outline-secondary">Купить билет</button>
+                        <button @click="buy" class="btn btn-outline-secondary">Купить билет</button>
                     </div>
                 </div>
                 

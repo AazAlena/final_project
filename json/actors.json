@@ -1,6 +1,33 @@
+[{
+  "_id": {
+    "$oid": "6491ba612731afa2b639df0f"
+  },
+  "name": "Евгений Егоров",
+  "born": "1998-06-19T06:47:00.000+00:00",
+  "performances": [
+    "ObjectId('6491b9a72731afa2b639defc')"
+  ],
+  "image": "EE"
+},
 {
-    "name": "Евгений Егоров",
-    "born": "1998-06-19T06:47:00.000+00:00",
-    "performances": [ ],
-    "image": "EE"
-}
+  "_id": {
+    "$oid": "6491bae62731afa2b639df16"
+  },
+  "name": "Максим Раковский",
+  "born": "1990-04-19T06:47:00.000+00:00",
+  "performances": [
+    "ObjectId('6491b9a72731afa2b639defc')"
+  ],
+  "image": "MR"
+},
+{
+  "_id": {
+    "$oid": "6491bc972731afa2b639df1e"
+  },
+  "name": "Николай Фоменко",
+  "born": "2000-03-19T06:47:00.000+00:00",
+  "performances": [
+    "ObjectId('6491b9a72731afa2b639defd')"
+  ],
+  "image": "NF"
+}]

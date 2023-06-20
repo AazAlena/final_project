@@ -1,16 +1,41 @@
-[{   
-    "title": "Последнее Испытание",
-    "date": "2024-01-19T06:47:00.000+00:00",
-    "actors": ["ObjectId('6491b76d2731afa2b639def6')"],
-    "image": "per_PI",
-    "description": "faker.lorem.paragraph(3)",
-    "type": "musical"
+[{
+  "_id": {
+    "$oid": "6491b9a72731afa2b639defc"
+  },
+  "title": "Последнее Испытание",
+  "date": "2024-01-19T06:47:00.000+00:00",
+  "actors": [
+    "ObjectId('6491b76d2731afa2b639def6')",
+    "ObjectId('6491bae62731afa2b639df16')"
+  ],
+  "image": "per_PI",
+  "description": "faker.lorem.paragraph(3)",
+  "type": "musical"
 },
-{   
-    "title": "Горе от ума",
-    "date": "2023-10-20T10:47:00.000+00:00",
-    "actors": [],
-    "image": "per_GOY",
-    "description": "faker.lorem.paragraph(3)",
-    "type": "play"
+{
+  "_id": {
+    "$oid": "6491b9a72731afa2b639defd"
+  },
+  "title": "Горе от ума",
+  "date": "2023-10-20T10:47:00.000+00:00",
+  "actors": [
+    "ObjectId('6491bc972731afa2b639df1e')"
+  ],
+  "image": "per_GOY",
+  "description": "faker.lorem.paragraph(3)",
+  "type": "play"
+},
+{
+  "_id": {
+    "$oid": "6491bc472731afa2b639df1b"
+  },
+  "title": "Преступление и Наказание",
+  "date": "2024-09-02T07:40:00.000+00:00",
+  "actors": [
+    "ObjectId('6491b76d2731afa2b639def6')",
+    "ObjectId('6491bae62731afa2b639df16')"
+  ],
+  "image": "per_PAN",
+  "description": "faker.lorem.paragraph(3)",
+  "type": "musical"
 }]
