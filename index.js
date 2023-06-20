@@ -44,4 +44,7 @@ let actSchema = new mongoose.Schema({
 
 let Actor = mongoose.model('actors', performSchema);
 
-
+app.get('/performances/all', async function (req, res) {
+    let response = await Performance.find()
+    res.send(response)
+})
