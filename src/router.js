@@ -2,8 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 
 // Компоненты страниц
-import Page1 from './views/Page1.vue';
-import Page2 from './views/Page2.vue';
+import AllPer from './views/AllPer.vue';
+// import Page2 from './views/Page2.vue';
 
 
 export default createRouter({
@@ -15,13 +15,13 @@ export default createRouter({
     routes: [
         {
             path: '/',
-            name: 'page1',
-            component: Page1,
-        },
-        {
-            path: '/page2',
-            name: 'page2',
-            component: Page2
+            name: 'AllPer',
+            component: AllPer,
         }
+        // {
+        //     path: '/page2',
+        //     name: 'page2',
+        //     component: Page2
+        // }
     ]
 })

@@ -9,7 +9,7 @@ export default {
 
 
 <template>
-    Страница 1
+    
 </template>
 
 
