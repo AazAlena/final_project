@@ -17,13 +17,15 @@ app.use(express.json());
 // Настройка БД
 let mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/project-template');
+// let Schema = mongoose.Schema;
 
 let performSchema = new mongoose.Schema({
     title: String,
     date: Date,
     actors: [{
-        ref: "actors",
+        ref: 'Actor',
         type: mongoose.ObjectId
+        // type: Schema.Types.ObjectId
     }],
     image: String,
     description: String,
@@ -35,10 +37,13 @@ let Performance = mongoose.model('performances', performSchema);
 let actSchema = new mongoose.Schema({
     name: String,
     born: Date,
-    performances: [{
-        ref: "performances",
+    performances: [
+        {
+        ref: 'Performance',
         type: mongoose.ObjectId
-    }],
+        // type: Schema.Types.ObjectId
+        }
+    ],
     image: String
 })
 
@@ -61,8 +66,9 @@ app.get('/plays/all', async function (req, res) {
 
 app.get('/onepage', async function (req, res) {
     let perform1 = req.query.perform_id;
-    console.log('1', perform1);
-    let perform2 = await Performance.findOne({_id: perform1});
+    // console.log('1', perform1);
+    let perform2 = await Performance.findOne({_id: perform1}).populate("actors");
+    console.log(perform2, perform2.actors);
     res.send(perform2);
 })
 

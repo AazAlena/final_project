@@ -8,7 +8,8 @@ export default {
     data(){
         return {
             qwe: faker.lorem.paragraph(10),
-            performance:''
+            performance: '',
+            description: ''
         }
     },
     methods: {
@@ -20,6 +21,7 @@ export default {
                 }
             });
             this.performance = response.data;
+            this.description = this.performance.description;
             console.log('2', this.performance);
         },
         day(date){
@@ -39,34 +41,26 @@ export default {
 <template >
 <div style="justify-content: center; display: flex">
     <div class="container owen">
-        <h2>Название</h2>
+        <h2>{{this.performance.title}}</h2>
         <div class="row">
 
             <div class="col" style="width: 40%">
-                <div> <img style="width: 90%; margin: 10px" src="src/assets/EE.jpg" alt=""> </div>
+                <div> <img style="width: 90%; margin: 10px" :src="'src/assets/'+this.performance.image+'.jpg'" alt=""> </div>
                 <div class="col" style="width: 90%; margin: 10px">
                     <div class="row" style="justify-content: space-around;">
-                        <div class="col" style="text-align: center;">
-                            <img src="src/assets/EE.jpg" class="portret" alt="">
-                            <p class="name col">Имя фамилия</p>
-                        </div>
-                        <div class="col"  style="text-align: center;">
-                            <img src="src/assets/EE.jpg" class="portret" alt="">
-                            <p class="name col">Имя фамилия</p>
-                        </div>
-                        <div class="col"  style="text-align: center;">
-                            <img src="src/assets/EE.jpg" class="portret" alt="">
-                            <p class="name col">Имя фамилия</p>
+                        <div class="col" v-for="(item, index) in this.performance.actors" style="text-align: center;">
+                            <img :src="'src/assets/'+item.image+'.jpg'" class="portret" alt="">
+                            <p class="name col">{{item.name}}</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col" style="width: 45%">
-                <h5 style="margin: 10px">Дата: 2023 05/04 в 16:00</h5>
+                <h5 style="margin: 10px">Ввемя: {{day(this.performance.date)}}</h5>
                 <hr style="margin: 10px" >
                 <div style="margin: 10px; font-size: 19px;">
                     <h6>Описание</h6>
-                   {{this.qwe}} 
+                   <!-- {{this.description}}  -->
                 </div>
                 <div style="display: flex; justify-content: end;">
                     <button class="btn btn-outline-secondary" style="width: 40%; border-color: brown; color:brown">Купить билет</button>
