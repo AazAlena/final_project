@@ -5,6 +5,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import AllPer from './views/AllPer.vue';
 import OnlyMusicals from './views/OnlyMusicals.vue';
 import OnlyPlay from './views/OnlyPlay.vue';
+import OnePage from './views/OnePage.vue';
 
 export default createRouter({
     // История переходов сохраняется
@@ -27,6 +28,12 @@ export default createRouter({
             path: '/musicals',
             name: 'play',
             component: OnlyPlay
+        },
+        {
+            path: '/onepage',
+            name: 'onepage',
+            component: OnePage
         }
+
     ]
 })

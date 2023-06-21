@@ -16,12 +16,21 @@ export default {
             let response = await axios.get('/performances/all');
             this.performances = response.data;
 
-            console.log(this.performances)
+            // console.log(this.performances)
         },
         day(date){
             return dayjs(date)
+        },
+        goOnePage(perform){
+            // console.log(perform.title)
+            this.$router.push({
+                name:'onepage',
+                params:{
+                    perform_id: perform.title
+                }
+            })
         }
-        
+    
     }, 
     mounted(){
         this.loadPerf();
@@ -45,7 +54,7 @@ export default {
                     <p class="card-text">{{item.type}}</p>
                     <div class="row">
                         <p class="card-text"><small class="text-muted">{{day(item.date)}}</small></p>
-                        <button class="btn btn-outline-secondary">Купить билет</button>
+                        <button @click="goOnePage(item)" class="btn btn-outline-secondary">Купить билет</button>
                     </div>
                 </div>
                 

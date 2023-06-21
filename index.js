@@ -42,7 +42,7 @@ let actSchema = new mongoose.Schema({
     image: String
 })
 
-let Actor = mongoose.model('actors', performSchema);
+let Actor = mongoose.model('actors', actSchema);
 
 app.get('/performances/all', async function (req, res) {
     let response = await Performance.find()
@@ -58,3 +58,11 @@ app.get('/plays/all', async function (req, res) {
     let response = await Performance.find({type: 'play'})
     res.send(response)
 })
+
+app.post('/onepage', async function (req, res) {
+    let perform1 = req.body.perform_id;
+    console.log(perform1)
+    let perform2 = await Performance.findOne({title: perform1})
+    res.send(perform2)
+})
+

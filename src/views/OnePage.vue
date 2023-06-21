@@ -1,18 +1,44 @@
 <script>
 import { faker } from 'https://cdn.skypack.dev/@faker-js/faker';
 
+import axios from 'axios';
+import dayjs from 'dayjs';
+
 export default {
     data(){
         return {
-            qwe: faker.lorem.paragraph(10)
+            qwe: faker.lorem.paragraph(10),
+            performance:''
         }
     },
+    methods: {
+        async loadAll() {
+            let response;
+            response = await axios.post('/onepage', {
+                params:{
+                    performance_id: this.$route.params.perform_id
+                }
+            });
+            this.performance = response.data;
+            console.log(this.performance);
+        },
+        day(date){
+            return dayjs(date)
+        },
+        async buy(){
+            
+        }
+        
+    }, 
+    mounted(){
+        this.loadAll();
+    }
 }
 </script>
 
 <template >
 <div style="justify-content: center; display: flex">
-    <div class="container">здесь отдельная страница для покупки билета
+    <div class="container owen">
         <h2>Название</h2>
         <div class="row">
 
@@ -53,11 +79,12 @@ export default {
 
 
 <style>
-    .container{
+    .owen{
         margin: 40px;
         box-shadow: 0 5px 30px 0 rgba(0,0,0,0.4);;
         border-radius: 7px;
         max-width: 70%;
+        
     }
 
     .portret{
