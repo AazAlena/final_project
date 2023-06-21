@@ -8,7 +8,9 @@ import dayjs from 'dayjs';
 export default {
     data(){
         return {
-            performances:[]
+            performances:[],
+            dataFind: '',
+            titleFind: ''
         }
     },
     methods: {
@@ -30,6 +32,26 @@ export default {
                 }
             })
             
+        },
+
+        async search_data(){
+            console.log(this.dataFind)
+            let response = await axios.post('/performances/find/data', 
+            {
+                dataFind: this.dataFind
+            });
+            this.dataFind = '';
+            this.performances = response.data;
+
+        },
+        async search_title(){
+            console.log(this.titleFind)
+            let response = await axios.post('/performances/find/title', 
+            {
+                titleFind: this.titleFind
+            });
+            // this.titleFind = '';
+            this.performances = response.data;
         }
     
     }, 
@@ -41,28 +63,47 @@ export default {
 
 
 <template>
-    <div class=" row row-cols-1 row-cols-md-2 g-4" style="justify-content: space-around;">
-
-        <div v-for="(item, index) in performances " class="card mb-3" style="width: 40%;">
-            <div class="row g-0">
-                <div class="col-md-5">
-                    <img :src="'/src/assets/'+item.image+'.svg'" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-7">
-                <div class="card-body">
-                    <h5 class="card-title">{{item.title}}</h5>
-                    <p class="card-text">Где проходит постановка. Адрес.</p>
-                    <p class="card-text">{{item.type}}</p>
-                    <div class="row">
-                        <p class="card-text"><small class="text-muted">{{day(item.date)}}</small></p>
-                        <button @click="goOnePage(item)" class="btn btn-outline-secondary">Купить билет</button>
+    <div class="container" style="justify-content: center;">
+        <div class="row" 
+        style="margin: 20px 20px 20px 40px; max-width: 50%; justify-content: center; background-color: black; padding: 20px; border-radius: 7px;">
+            <div class="col col-lg-auto mb-3 mb-lg-0 me-lg-3" style="margin-bottom: 20px;">
+                <!-- <span class="input-group-text">Время</span> -->
+                <input v-model="dataFind" @input="search_data"
+                style="background-color: rgb(155, 155, 155);" 
+                type="datetime-local" 
+                class="form-control">
+            </div>
+            <div class="col">
+                <form class="col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                    <input v-model="titleFind" @keydown="search_title" 
+                    style="background-color: rgb(155, 155, 155); color: black" 
+                    type="search" 
+                    class="form-control form-control-dark" 
+                    placeholder="Search..." aria-label="Search">
+                </form>
+            </div>
+        </div>
+        <div class=" row row-cols-1 row-cols-md-2 g-4" style="justify-content: space-around;">
+            <div v-for="(item, index) in performances " class="card mb-3" style="width: 40%;">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img :src="'/src/assets/'+item.image+'.svg'" class="img-fluid rounded-start" alt="...">
                     </div>
-                </div>
-                
+                    <div class="col-md-7">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.title}}</h5>
+                        <p class="card-text">Где проходит постановка. Адрес.</p>
+                        <p class="card-text">{{item.type}}</p>
+                        <div class="row">
+                            <p class="card-text"><small class="text-muted">{{day(item.date)}}</small></p>
+                            <button @click="goOnePage(item)" class="btn btn-outline-secondary">Купить билет</button>
+                        </div>
+                    </div>
+                    
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
 </template>
 

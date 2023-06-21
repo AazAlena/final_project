@@ -32,15 +32,7 @@
             <button @click="goMus" style="margin: 5px" class="btn btn-outline-secondary">Мюзиклы</button>
             <button @click="goPlay" style="margin: 5px" class="btn btn-outline-secondary">Спектакли</button>
         </div>
-        <div class="col col-lg-auto mb-3 mb-lg-0 me-lg-3" style="margin-bottom: 20px;">
-                <!-- <span class="input-group-text">Время</span> -->
-                <input type="datetime-local" class="form-control">
-        </div>
-        <div class="col">
-            <form class="col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-            </form>
-        </div>
+        
       </div>
     </div>
   </header>

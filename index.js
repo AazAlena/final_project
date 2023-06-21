@@ -72,3 +72,25 @@ app.get('/onepage', async function (req, res) {
     res.send(perform2);
 })
 
+app.post('/performances/find/data', async function (req, res) {
+    let dataFind = req.body.dataFind;
+    
+    let perform = await Performance.find({data: dataFind}).populate("actors");
+
+    res.send(perform);
+});
+
+app.post('/performances/find/title', async function (req, res) {
+    let titleFind = req.body.titleFind;
+    
+    let perform = await Performance.find().populate("actors");
+    let perform2 = [];
+    for (i=0; i< perform.length; i++){
+        if (perform[i].title.toLowerCase().includes(titleFind.toLowerCase())){
+            perform2.push(perform[i])
+        }
+    }
+    console.log(perform2)
+    res.send(perform2);
+});
+
