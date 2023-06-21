@@ -59,10 +59,10 @@ app.get('/plays/all', async function (req, res) {
     res.send(response)
 })
 
-app.post('/onepage', async function (req, res) {
-    let perform1 = req.body.perform_id;
-    console.log(perform1)
-    let perform2 = await Performance.findOne({title: perform1})
-    res.send(perform2)
+app.get('/onepage', async function (req, res) {
+    let perform1 = req.query.perform_id;
+    console.log('1', perform1);
+    let perform2 = await Performance.findOne({_id: perform1});
+    res.send(perform2);
 })
 

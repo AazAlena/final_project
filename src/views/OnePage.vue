@@ -14,13 +14,13 @@ export default {
     methods: {
         async loadAll() {
             let response;
-            response = await axios.post('/onepage', {
+            response = await axios('/onepage', {
                 params:{
-                    performance_id: this.$route.params.perform_id
+                    perform_id: this.$route.params.perform_id
                 }
             });
             this.performance = response.data;
-            console.log(this.performance);
+            console.log('2', this.performance);
         },
         day(date){
             return dayjs(date)

@@ -26,7 +26,7 @@ export default {
             this.$router.push({
                 name:'onepage',
                 params:{
-                    perform_id: perform.title
+                    perform_id: perform._id
                 }
             })
         }
@@ -45,7 +45,7 @@ export default {
         <div v-for="(item, index) in performances " class="card mb-3" style="width: 40%;">
             <div class="row g-0">
                 <div class="col-md-5">
-                    <img :src="'/src/assets/'+item.image.value+'.svg'" class="img-fluid rounded-start" alt="...">
+                    <img :src="'/src/assets/'+item.image+'.svg'" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-7">
                 <div class="card-body">

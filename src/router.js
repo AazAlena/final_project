@@ -30,7 +30,7 @@ export default createRouter({
             component: OnlyPlay
         },
         {
-            path: '/onepage',
+            path: '/onepage/:perform_id',
             name: 'onepage',
             component: OnePage
         }
