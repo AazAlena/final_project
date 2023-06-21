@@ -64,6 +64,15 @@ app.get('/plays/all', async function (req, res) {
     res.send(response)
 })
 
+app.get('/actors/all', async function (req, res) {
+    let response = await Actor.find()
+    res.send(response)
+})
+
+
+
+
+
 app.get('/onepage', async function (req, res) {
     let perform1 = req.query.perform_id;
     // console.log('1', perform1);

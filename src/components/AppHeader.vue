@@ -33,9 +33,9 @@
             <img class="bi me-2" width="70" height="70" role="img" aria-label="Bootstrap" src="src/assets/icons8-theatre-50.png" alt="">
         </a>
         <div class="col" >
-            <button @click="goAll" style="margin: 5px" class="btn btn-outline-secondary">Все концерты</button>
+            <button @click="goAll" style="margin: 5px;" class="btn all">Все концерты</button>
             <button @click="goMus" style="margin: 5px" class="btn btn-outline-secondary">Мюзиклы</button>
-            <button @click="goPlay" style="margin: 5px" class="btn btn-outline-secondary">Спектакли</button>
+            <button @click="goPlay" style="margin: 5px; margin-right: 50px;" class="btn btn-outline-secondary">Спектакли</button>
             <button @click="goActors" style="margin: 5px" class="btn btn-outline-secondary">Наши актёры</button>
         </div>
         <div class="col col-lg-auto mb-3 mb-lg-0 me-lg-3" style="margin-bottom: 20px;">
@@ -49,9 +49,16 @@
 </template>
 
 <style>
-.btn-outline-secondary{
+
+.all{
     color: white;
-    
+    border: 1px solid white;
+}
+
+.all:hover{
+    color: white;
+    border: 1px solid rgb(105,117,125);
+    background-color: rgb(105,117,125);
 }
 
 header{

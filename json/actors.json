@@ -5,7 +5,8 @@
   "name": "Евгений Егоров",
   "born": "1998-06-19T06:47:00.000+00:00",
   "performances": [
-    "ObjectId('6491b9a72731afa2b639defc')"
+    "ObjectId('6491b9a72731afa2b639defc')",
+    "ObjectId('6491b9a72731afa2b639defd')"
   ],
   "image": "EE"
 },
@@ -30,4 +31,19 @@
     "ObjectId('6491b9a72731afa2b639defd')"
   ],
   "image": "NF"
+},
+{
+  "_id": {
+    "$oid": "649300a62731afa2b639df27"
+  },
+  "name": "Елена Минина",
+  "born": "2000-20-20T06:47:00.000+00:00",
+  "performances": [
+    "ObjectId('6491b9a72731afa2b639defd')",
+    "ObjectId('6491b9a72731afa2b639defc')",
+    "ObjectId('6491bc472731afa2b639df1b')",
+    "ObjectId('6492c3f32731afa2b639df24')",
+    "ObjectId('d6491b9a72731afa2b639defd')"
+  ],
+  "image": "EM"
 }]

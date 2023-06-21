@@ -21,7 +21,7 @@ export default {
             console.log(this.performances)
         },
         day(date){
-            return dayjs(date)
+            return dayjs(date).format('MM/DD/YYYY в HH:mm')
         },
         goOnePage(perform){
             // console.log(perform.title)
@@ -94,9 +94,12 @@ export default {
                         <h5 class="card-title">{{item.title}}</h5>
                         <p class="card-text">Где проходит постановка. Адрес.</p>
                         <p class="card-text">{{item.type}}</p>
-                        <div class="row">
+                        <div class="col">
                             <p class="card-text"><small class="text-muted">{{day(item.date)}}</small></p>
-                            <button @click="goOnePage(item)" class="btn btn-outline-secondary">Купить билет</button>
+                            <div class="row" style="align-items: end;">
+                                <div class="col"><button @click="goOnePage(item)" class="btn all2 ">Купить билет</button></div>
+                                <div class="col text-muted">От 1000 до 5000 </div>
+                            </div>
                         </div>
                     </div>
                     
@@ -109,7 +112,17 @@ export default {
 
 
 <style>
-.btn-outline-secondary{
-    color: grey
+.all2{
+    color: black;
+    border: 1px solid black;
 }
+
+.all2:hover{
+    color: white;
+    border: 1px solid rgb(105,117,125);
+    background-color: rgb(105,117,125);
+}
+
+
+
 </style>

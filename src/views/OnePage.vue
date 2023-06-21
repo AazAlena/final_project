@@ -25,7 +25,7 @@ export default {
             console.log('2', this.performance);
         },
         day(date){
-            return dayjs(date)
+            return dayjs(date).format('MM/DD/YYYY в HH:mm')
         },
         async buy(){
             
