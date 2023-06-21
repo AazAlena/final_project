@@ -103,3 +103,23 @@ app.post('/performances/find/title', async function (req, res) {
     res.send(perform2);
 });
 
+app.post('/performances/find/price', async function (req, res) {
+    let fromFind = req.body.fromFind;
+    let toFind = req.body.toFind;
+
+    let perform = await Performance.find().populate('actors');
+    let perform2 = [];
+    if (fromFind && toFind){
+        for (i=0; i< perform.length; i++){
+            if (perform[i].from <= fromFind && perform[i].to >= toFind){
+                perform2.push(perform[i])
+            }
+        }
+    } else if (fromFind && !toFind){
+
+    } else if (!fromFind && toFind){
+
+    }
+    console.log(perform2)
+    res.send(perform2);
+});

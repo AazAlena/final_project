@@ -65,11 +65,15 @@ export default {
                         <h5 class="card-title">{{item.title}}</h5>
                         <p class="card-text">Где проходит постановка. Адрес.</p>
                         <p class="card-text">{{item.type}}</p>
-                        <div class="row">
+                        <div class="col">
                             <p class="card-text"><small class="text-muted">{{day(item.date)}}</small></p>
-                            <button @click="goOnePage(item)" class="btn btn-outline-secondary">Купить билет</button>
+                            <div class="row" style="align-items: end;">
+                                <div class="col"><button @click="goOnePage(item)" class="btn all2 ">Купить билет</button></div>
+                                <div class="col text-muted">От {{item.from}} до {{ item.to }} </div>
+                            </div>
                         </div>
                     </div>
+                    
                 
                 </div>
             </div>

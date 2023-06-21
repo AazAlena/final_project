@@ -10,7 +10,9 @@ export default {
         return {
             performances:[],
             dataFind: '',
-            titleFind: ''
+            titleFind: '',
+            fromFind: '',
+            toFind: ''
         }
     },
     methods: {
@@ -52,6 +54,16 @@ export default {
             });
             // this.titleFind = '';
             this.performances = response.data;
+        },
+        async search_price(){
+            console.log(this.toFind, this.fromFind)
+            let response = await axios.post('/performances/find/price', 
+            {
+                fromFind:this.fromFind,
+                toFind:this.toFind
+            });
+            // this.titleFind = '';
+            this.performances = response.data;
         }
     
     }, 
@@ -82,6 +94,28 @@ export default {
                     placeholder="Search..." aria-label="Search">
                 </form>
             </div>
+            <div class="col">
+            <div class="row">
+                <div class="col" ><p style="color: rgb(105,117,125)">Настройка цены:</p></div>
+                <div class="col" >
+                    <div class="row">
+                        <form class="col-lg-auto mb-3 mb-lg-0 me-lg-3"  >
+                            <input v-model="fromFind" @keydown="search_price" 
+                            style="background-color: rgb(32, 37, 41); color: rgb(105,117,125); margin-bottom: 5px;" 
+                            type="search" 
+                            class="form-control form-control-dark" 
+                            placeholder="От..." aria-label="Search">
+                        
+                            <input v-model="toFind" @keydown="search_price" 
+                            style="background-color: rgb(32, 37, 41); color: rgb(105,117,125)" 
+                            type="search" 
+                            class="form-control form-control-dark" 
+                            placeholder="До..." aria-label="Search">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </div>
         </div>
         <div class=" row row-cols-1 row-cols-md-2 g-4" style="justify-content: space-around;">
             <div v-for="(item, index) in performances " class="card mb-3" style="width: 40%; padding: 0;">
@@ -90,18 +124,18 @@ export default {
                         <img :src="'/src/assets/'+item.image+'.jpg'" class="img-fluid rounded-start" alt="..." style="border-radius: 5px; display: flex;">
                     </div>
                     <div class="col-md-7">
-                    <div class="card-body">
-                        <h5 class="card-title">{{item.title}}</h5>
-                        <p class="card-text">Где проходит постановка. Адрес.</p>
-                        <p class="card-text">{{item.type}}</p>
-                        <div class="col">
-                            <p class="card-text"><small class="text-muted">{{day(item.date)}}</small></p>
-                            <div class="row" style="align-items: end;">
-                                <div class="col"><button @click="goOnePage(item)" class="btn all2 ">Купить билет</button></div>
-                                <div class="col text-muted">От 1000 до 5000 </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{item.title}}</h5>
+                            <p class="card-text">Где проходит постановка. Адрес.</p>
+                            <p class="card-text">{{item.type}}</p>
+                            <div class="col">
+                                <p class="card-text"><small class="text-muted">{{day(item.date)}}</small></p>
+                                <div class="row" style="align-items: end;">
+                                    <div class="col"><button @click="goOnePage(item)" class="btn all2 ">Купить билет</button></div>
+                                    <div class="col text-muted">От {{item.from}} до {{ item.to }} </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     
                     </div>
                 </div>
