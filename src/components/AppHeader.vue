@@ -16,6 +16,11 @@
                 this.$router.push({
                     name: 'play'
                 })
+            },
+            goActors(){
+                this.$router.push({
+                    name: 'actors'
+                })
             }
         }
     }

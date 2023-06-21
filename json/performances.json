@@ -10,7 +10,7 @@
   ],
   "image": "per_PI",
   "description": "faker.lorem.paragraph(3)",
-  "type": "musical"
+  "type": "Мюзикл"
 },
 {
   "_id": {
@@ -23,7 +23,7 @@
   ],
   "image": "per_GOY",
   "description": "faker.lorem.paragraph(3)",
-  "type": "play"
+  "type": "Спектакль"
 },
 {
   "_id": {
@@ -37,5 +37,19 @@
   ],
   "image": "per_PAN",
   "description": "faker.lorem.paragraph(3)",
-  "type": "musical"
+  "type": "Мюзикл"
+},
+{
+  "_id": {
+    "$oid": "6492c3f32731afa2b639df24"
+  },
+  "title": "Финрод",
+  "date": "2022-10-10T07:40:00.000+00:00",
+  "actors": [
+    "ObjectId('6491b76d2731afa2b639def6')",
+    "ObjectId('6491bae62731afa2b639df16')"
+  ],
+  "image": "per_F",
+  "description": "faker.lorem.paragraph(3)",
+  "type": "Мюзикл"
 }]

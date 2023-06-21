@@ -6,6 +6,8 @@ import AllPer from './views/AllPer.vue';
 import OnlyMusicals from './views/OnlyMusicals.vue';
 import OnlyPlay from './views/OnlyPlay.vue';
 import OnePage from './views/OnePage.vue';
+import AllActors from './views/AllActors.vue';
+
 
 export default createRouter({
     // История переходов сохраняется
@@ -33,6 +35,11 @@ export default createRouter({
             path: '/onepage/:perform_id',
             name: 'onepage',
             component: OnePage
+        },
+        {
+            path: '/actors',
+            name: 'actors',
+            component: AllActors
         }
 
     ]

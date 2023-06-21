@@ -68,7 +68,7 @@ app.get('/onepage', async function (req, res) {
     let perform1 = req.query.perform_id;
     // console.log('1', perform1);
     let perform2 = await Performance.findOne({_id: perform1}).populate("actors");
-    console.log(perform2, perform2);
+    console.log(perform2, perform2 );
     res.send(perform2);
 })
 
