@@ -18,7 +18,7 @@ export default {
             let response = await axios.get('/performances/all');
             this.performances = response.data;
 
-            // console.log(this.performances)
+            console.log(this.performances)
         },
         day(date){
             return dayjs(date)
@@ -65,18 +65,18 @@ export default {
 <template>
     <div class="container" style="justify-content: center;">
         <div class="row" 
-        style="margin: 20px 20px 20px 40px; max-width: 50%; justify-content: center; background-color: black; padding: 20px; border-radius: 7px;">
-            <div class="col col-lg-auto mb-3 mb-lg-0 me-lg-3" style="margin-bottom: 20px;">
+        style="margin: 20px 20px 20px 40px; justify-content: center; background-color: rgb(32, 37, 41); padding: 20px 10px; border-radius: 7px">
+            <div class="col col-lg-auto mb-3 mb-lg-0 me-lg-3" >
                 <!-- <span class="input-group-text">Время</span> -->
                 <input v-model="dataFind" @input="search_data"
-                style="background-color: rgb(155, 155, 155);" 
+                style="background-color: rgb(32, 37, 41); color: rgb(105,117,125) ; width: 400px;" 
                 type="datetime-local" 
                 class="form-control">
             </div>
             <div class="col">
                 <form class="col-lg-auto mb-3 mb-lg-0 me-lg-3">
                     <input v-model="titleFind" @keydown="search_title" 
-                    style="background-color: rgb(155, 155, 155); color: black" 
+                    style="background-color: rgb(32, 37, 41); color: rgb(105,117,125)" 
                     type="search" 
                     class="form-control form-control-dark" 
                     placeholder="Search..." aria-label="Search">
@@ -84,10 +84,10 @@ export default {
             </div>
         </div>
         <div class=" row row-cols-1 row-cols-md-2 g-4" style="justify-content: space-around;">
-            <div v-for="(item, index) in performances " class="card mb-3" style="width: 40%;">
+            <div v-for="(item, index) in performances " class="card mb-3" style="width: 40%; padding: 0;">
                 <div class="row g-0">
-                    <div class="col-md-5">
-                        <img :src="'/src/assets/'+item.image+'.svg'" class="img-fluid rounded-start" alt="...">
+                    <div class="col-md-5" style="justify-content: center;">
+                        <img :src="'/src/assets/'+item.image+'.jpg'" class="img-fluid rounded-start" alt="..." style="border-radius: 5px; display: flex;">
                     </div>
                     <div class="col-md-7">
                     <div class="card-body">

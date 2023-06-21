@@ -45,7 +45,7 @@ export default {
         <div class="row">
 
             <div class="col" style="width: 40%">
-                <div> <img style="width: 90%; margin: 10px" :src="'src/assets/'+this.performance.image+'.jpg'" alt=""> </div>
+                <div> <img style="width: 90%; margin: 10px" :src="'/src/assets/'+this.performance.image+'.jpg'" alt=""> </div>
                 <div class="col" style="width: 90%; margin: 10px">
                     <div class="row" style="justify-content: space-around;">
                         <div class="col" v-for="(item, index) in this.performance.actors" style="text-align: center;">
@@ -78,7 +78,7 @@ export default {
         box-shadow: 0 5px 30px 0 rgba(0,0,0,0.4);;
         border-radius: 7px;
         max-width: 70%;
-        
+        padding:10px
     }
 
     .portret{

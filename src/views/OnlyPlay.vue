@@ -32,9 +32,10 @@ export default {
     <div class=" row row-cols-1 row-cols-md-2 g-4" style="justify-content: space-around;">
 
         <div v-for="(item, index) in performances " class="card mb-3" style="width: 40%;">
+        
             <div class="row g-0">
-                <div class="col-md-5">
-                    <img :src="'/src/assets/'+item.image.value+'.svg'" class="img-fluid rounded-start" alt="...">
+                <div class="col-md-5" style="justify-content: center;">
+                    <img :src="'/src/assets/'+item.image+'.jpg'" class="img-fluid rounded-start" alt="..." style="border-radius: 5px; display: flex;">
                 </div>
                 <div class="col-md-7">
                 <div class="card-body">
@@ -43,12 +44,12 @@ export default {
                     <p class="card-text">{{item.type}}</p>
                     <div class="row">
                         <p class="card-text"><small class="text-muted">{{day(item.date)}}</small></p>
-                        <button class="btn btn-outline-secondary">Купить билет</button>
+                        <button @click="goOnePage(item)" class="btn btn-outline-secondary">Купить билет</button>
                     </div>
                 </div>
-                
-                </div>
             </div>
+                
+        </div>
         </div>
 
     </div>

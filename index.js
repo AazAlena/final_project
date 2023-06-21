@@ -55,12 +55,12 @@ app.get('/performances/all', async function (req, res) {
 })
 
 app.get('/musicals/all', async function (req, res) {
-    let response = await Performance.find({type: 'musical'})
+    let response = await Performance.find({type: 'Мюзикл'})
     res.send(response)
 })
 
 app.get('/plays/all', async function (req, res) {
-    let response = await Performance.find({type: 'play'})
+    let response = await Performance.find({type: 'Спектакль'})
     res.send(response)
 })
 
@@ -68,7 +68,7 @@ app.get('/onepage', async function (req, res) {
     let perform1 = req.query.perform_id;
     // console.log('1', perform1);
     let perform2 = await Performance.findOne({_id: perform1}).populate("actors");
-    console.log(perform2, perform2.actors);
+    console.log(perform2, perform2);
     res.send(perform2);
 })
 
