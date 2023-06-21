@@ -56,7 +56,7 @@ export default {
             this.performances = response.data;
         },
         async search_price(){
-            console.log(this.toFind, this.fromFind)
+            console.log(this.fromFind, this.toFind)
             let response = await axios.post('/performances/find/price', 
             {
                 fromFind:this.fromFind,
@@ -64,6 +64,7 @@ export default {
             });
             // this.titleFind = '';
             this.performances = response.data;
+            console.log(this.performances)
         }
     
     }, 

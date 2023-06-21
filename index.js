@@ -29,7 +29,9 @@ let performSchema = new mongoose.Schema({
     }],
     image: String,
     description: String,
-    type: String
+    type: String,
+    from: Number,
+    to: Number
 })
 
 let Performance = mongoose.model('performances', performSchema);
@@ -108,18 +110,23 @@ app.post('/performances/find/price', async function (req, res) {
     let toFind = req.body.toFind;
 
     let perform = await Performance.find().populate('actors');
+    // console.log(perform)
     let perform2 = [];
+    // console.log(perform[0].title)
     if (fromFind && toFind){
+        // console.log(fromFind, toFind)
         for (i=0; i< perform.length; i++){
-            if (perform[i].from <= fromFind && perform[i].to >= toFind){
+            if (perform[i].from <= fromFind && perform[i].to <= toFind){
                 perform2.push(perform[i])
             }
         }
-    } else if (fromFind && !toFind){
-
     } else if (!fromFind && toFind){
-
+        for (i=0; i< perform.length; i++){
+            if (perform[i].to >= toFind){
+                perform2.push(perform[i])
+            }
+        }
     }
-    console.log(perform2)
+    // console.log(perform2)
     res.send(perform2);
 });
