@@ -6,39 +6,25 @@
   "date": "2024-01-19T06:47:00.000+00:00",
   "actors": [
     {"$oid": "6491b76d2731afa2b639def6"},
-    {"$oid": '6491bae62731afa2b639df16'}
+    {"$oid": "6491bae62731afa2b639df16"},
+    {"$oid": "649300a62731afa2b639df27"}
   ],
   "image": "per_PI",
   "description": "faker.lorem.paragraph(3)",
   "type": "Мюзикл",
   "from": 1000,
   "to": 3000
-
 },
 {
   "_id": {
-    "$oid": "6491b9a72731afa2b639defd"
-  },
-  "title": "Горе от ума",
-  "date": "2023-10-20T10:47:00.000+00:00",
-  "actors": [
-    "ObjectId('6491bc972731afa2b639df1e')"
-  ],
-  "image": "per_GOY",
-  "description": "faker.lorem.paragraph(3)",
-  "type": "Спектакль",
-  "from": 1000,
-  "to": 2000
-},
-{
-  "_id": {
-    "$oid": "6491bc472731afa2b639df1b"
+   "$oid": "6491b9a72731afa2b639defc"
   },
   "title": "Преступление и Наказание",
   "date": "2024-09-02T07:40:00.000+00:00",
   "actors": [
-    "ObjectId('6491b76d2731afa2b639def6')",
-    "ObjectId('6491bae62731afa2b639df16')"
+    {"$oid":"6491b76d2731afa2b639def6"},
+    {"$oid":"6491bae62731afa2b639df16"},
+    {"$oid":"6491ba612731afa2b639df0f"}
   ],
   "image": "per_PAN",
   "description": "faker.lorem.paragraph(3)",
@@ -52,13 +38,30 @@
   },
   "title": "Финрод",
   "date": "2022-10-10T07:40:00.000+00:00",
-  "actors": [
-    "ObjectId('6491b76d2731afa2b639def6')",
-    "ObjectId('6491bae62731afa2b639df16')"
+  "actors":[
+    {"$oid": "6491b76d2731afa2b639def6"},
+    {"$oid": "6491bae62731afa2b639df16"},
+    {"$oid": "649300a62731afa2b639df27"}
   ],
   "image": "per_F",
   "description": "faker.lorem.paragraph(3)",
   "type": "Мюзикл",
   "from": 500,
+  "to": 2000
+},
+{
+  "_id": {
+    "$oid": "6491b9a72731afa2b639defd"
+  },
+  "title": "Горе от ума",
+  "date": "2023-10-20T10:47:00.000+00:00",
+  "actors": [
+    {"$oid":"6491ba612731afa2b639df0f"},
+    {"$oid":"6491bc972731afa2b639df1e"}
+  ],
+  "image": "per_GOY",
+  "description": "faker.lorem.paragraph(3)",
+  "type": "Спектакль",
+  "from": 1000,
   "to": 2000
 }]
