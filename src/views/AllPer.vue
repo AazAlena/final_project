@@ -88,7 +88,7 @@ export default {
             </div>
             <div class="col">
                 <form class="col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                    <input v-model="titleFind" @keydown="search_title" 
+                    <input v-model="titleFind" @input="search_title" 
                     style="background-color: rgb(32, 37, 41); color: rgb(105,117,125)" 
                     type="search" 
                     class="form-control form-control-dark" 
@@ -101,13 +101,13 @@ export default {
                 <div class="col" >
                     <div class="row">
                         <form class="col-lg-auto mb-3 mb-lg-0 me-lg-3"  >
-                            <input v-model="fromFind" @keydown="search_price" 
+                            <input v-model="fromFind" @input="search_price" 
                             style="background-color: rgb(32, 37, 41); color: rgb(105,117,125); margin-bottom: 5px;" 
                             type="search" 
                             class="form-control form-control-dark" 
                             placeholder="От..." aria-label="Search">
                         
-                            <input v-model="toFind" @keydown="search_price" 
+                            <input v-model="toFind" @input="search_price" 
                             style="background-color: rgb(32, 37, 41); color: rgb(105,117,125)" 
                             type="search" 
                             class="form-control form-control-dark" 

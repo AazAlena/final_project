@@ -122,7 +122,7 @@ app.post('/performances/find/price', async function (req, res) {
         }
     } else if (!fromFind && toFind){
         for (i=0; i< perform.length; i++){
-            if (perform[i].to >= toFind){
+            if (perform[i].to <= toFind){
                 perform2.push(perform[i])
             }
         }
