@@ -23,7 +23,7 @@ let performSchema = new mongoose.Schema({
     title: String,
     date: Date,
     actors: [{
-        ref: 'Actor',
+        ref: 'actors',
         type: mongoose.ObjectId
         // type: Schema.Types.ObjectId
     }],
@@ -41,7 +41,7 @@ let actSchema = new mongoose.Schema({
     born: Date,
     performances: [
         {
-        ref: 'Performance',
+        ref: 'performances',
         type: mongoose.ObjectId
         // type: Schema.Types.ObjectId
         }
@@ -67,7 +67,7 @@ app.get('/plays/all', async function (req, res) {
 })
 
 app.get('/actors/all', async function (req, res) {
-    let response = await Actor.find()
+    let response = await Actor.find().populate('performances')
     res.send(response)
 })
 

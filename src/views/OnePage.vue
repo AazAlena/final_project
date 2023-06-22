@@ -21,8 +21,8 @@ export default {
                 }
             });
             this.performance = response.data;
-            this.description = this.performance.description;
-            console.log('2', this.performance);
+            this.description =faker.lorem.paragraph(8)
+            console.log('2', this.performance.actors);
         },
         day(date){
             return dayjs(date).format('MM/DD/YYYY в HH:mm')
@@ -60,7 +60,7 @@ export default {
                 <hr style="margin: 10px" >
                 <div style="margin: 10px; font-size: 19px;">
                     <h6>Описание</h6>
-                   <!-- {{this.description}}  -->
+                   {{this.description}} 
                 </div>
                 <div style="display: flex; justify-content: end;">
                     <button class="btn btn-outline-secondary" style="width: 40%; border-color: brown; color:brown">Купить билет</button>
@@ -83,9 +83,7 @@ export default {
 
     .portret{
         border-radius: 50%;
-        width: 50%;
-        height: auto;
-        
+        width: 20px;
     }
 
     .name{

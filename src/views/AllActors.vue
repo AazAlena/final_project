@@ -31,16 +31,18 @@ export default {
 
 <template>
     <div class="container" style="justify-content: center;">
-        <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
             <div v-for="(item, index) in actors" class="col" style="max-width: 40%;">
                 <div class="card q">
-                    <img :src="'src/assets/'+item.image+'.jpg'" class="card-img-top" style="width: 30%; height: auto; border-radius: 5px;" alt="...">
-                    <div class="card-body">
+                    <div><img :src="'src/assets/'+item.image+'.jpg'" class="card-img-top" style="width: 30%; height: auto; border-radius: 5px;" alt="..."></div>
+                    <div class="card-body w">
                         <h5 class="card-title">{{item.name}}</h5>
                         <p>Дата рождения: {{day(item.born)}}</p>
-                        <h6>Учавствовал(а) в постановках:</h6>
-                            <p class="card-text" v-for="(item2, index2) in item.performances">{{ item2 }}</p>
                     </div>
+                    <h6>Учавствовал(а) в постановках:</h6>
+                    <ul class="list-group">
+                        <li  v-for="(item2, index2) in item.performances" class="list-group-item">{{ item2.title }}</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -54,8 +56,12 @@ export default {
 }
 
 .q{
-    border: none;
-    
+    border: none;   
+}
+
+.w{
+    padding: 0;
+    padding-top: 5%;
 }
 
 </style>

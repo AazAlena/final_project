@@ -128,7 +128,7 @@ export default {
                         <div class="card-body">
                             <h5 class="card-title">{{item.title}}</h5>
                             <p class="card-text">Где проходит постановка. Адрес.</p>
-                            <p class="card-text">{{item.type}}</p>
+                            <p class="card-text" style="color:darkslategrey;">{{item.type}}</p>
                             <div class="col">
                                 <p class="card-text"><small class="text-muted">{{day(item.date)}}</small></p>
                                 <div class="row" style="align-items: end;">
