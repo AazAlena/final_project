@@ -77,9 +77,9 @@ export default {
 
 <template>
     <div class="container" style="justify-content: center;">
-        <div class="row" 
-        style="margin: 20px 20px 20px 40px; justify-content: center; background-color: rgb(32, 37, 41); padding: 20px 10px; border-radius: 7px">
-            <div class="col col-lg-auto mb-3 mb-lg-0 me-lg-3" >
+        <div class="row r" 
+        style="margin-bottom: 20px; justify-content: center; background-color: rgb(32, 37, 41); padding: 20px 10px; border-radius: 7px width: 100%;">
+            <div class="col col-lg-auto mb-3 mb-md-0 me-lg-3" >
                 <div class="col" ><p style="color: rgb(105,117,125)">Настройка по дате:</p></div>
                 <!-- <span class="input-group-text">Время</span> -->
                 <input v-model="dataFind" @input="search_data"
@@ -98,36 +98,36 @@ export default {
                 </form>
             </div>
             <div class="col">
-            <div class="row">
-                <div class="col" ><p style="color: rgb(105,117,125)">Настройка цены:</p></div>
-                <div class="col" >
-                    <div class="row">
-                        <form class="col-lg-auto mb-3 mb-lg-0 me-lg-3"  >
+                <div class="row">
+                    <div class="col" ><p style="color: rgb(105,117,125)">Настройка цены:</p></div>
+                    <div class="col" >
+                        <div class="row">
+                            <form class="col-lg-auto mb-3 mb-lg-0 me-lg-3"  >
+                                
+                                <input v-model="fromFind" @input="search_price" 
+                                style="background-color: rgb(32, 37, 41); color: rgb(105,117,125); margin-bottom: 5px;" 
+                                type="search" 
+                                class="form-control form-control-dark" 
+                                placeholder="От..." aria-label="Search">
                             
-                            <input v-model="fromFind" @input="search_price" 
-                            style="background-color: rgb(32, 37, 41); color: rgb(105,117,125); margin-bottom: 5px;" 
-                            type="search" 
-                            class="form-control form-control-dark" 
-                            placeholder="От..." aria-label="Search">
-                        
-                            <input v-model="toFind" @input="search_price" 
-                            style="background-color: rgb(32, 37, 41); color: rgb(105,117,125)" 
-                            type="search" 
-                            class="form-control form-control-dark" 
-                            placeholder="До..." aria-label="Search">
-                        </form>
+                                <input v-model="toFind" @input="search_price" 
+                                style="background-color: rgb(32, 37, 41); color: rgb(105,117,125)" 
+                                type="search" 
+                                class="form-control form-control-dark" 
+                                placeholder="До..." aria-label="Search">
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-            </div>
         </div>
-        <div class="row row-cols-1 row-cols-md-2" style="justify-content: center; gap:10px">
-            <div v-for="(item, index) in performances " class="card mb-3" style="width: 41%; padding: 0;">
-                <div class="row g-0">
-                    <div class="col-md-5" style="">
+        <div class="row row-cols-2 e" style="justify-content: center; gap:3%;">
+            <div v-for="(item, index) in performances " class="card mb-3 r" style="max-width: 540px; padding: 0;">
+                <div class="row row-cols-1 row-cols-md-2 g-0">
+                    <div class="col-md-4" style="">
                         <img :src="'/src/assets/'+item.image+'.jpg'" class="img-fluid rounded-start" alt="Картинка к представлению" style="border-radius: 5px; display: flex;">
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-md-8" >
                         <div class="card-body">
                             <h5 class="card-title">{{item.title}}</h5>
                             <p class="card-text">Где проходит постановка. Адрес.</p>
@@ -160,6 +160,12 @@ export default {
     background-color: rgb(105,117,125);
 }
 
+@media (max-width: 992px) { 
+    
+    .r{
+        width: 100%;
+    }
+}
 
 
 </style>

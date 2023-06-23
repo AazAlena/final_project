@@ -18,7 +18,17 @@ export default {
         },
         day(date){
             return dayjs(date).format('DD/MM/YYYY в HH:mm')
-        }
+        },
+        goOnePage(perform){
+            // console.log(perform.title)
+            this.$router.push({
+                name:'onepage',
+                params:{
+                    perform_id: perform._id
+                }
+            })
+            
+        },
         
     }, 
     mounted(){

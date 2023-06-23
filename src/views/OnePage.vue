@@ -21,7 +21,7 @@ export default {
                 }
             });
             this.performance = response.data;
-            this.description =faker.lorem.paragraph(8)
+            this.description =faker.lorem.paragraph(10)
             console.log('2', this.performance.actors);
         },
         day(date){
