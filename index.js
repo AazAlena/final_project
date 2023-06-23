@@ -6,10 +6,11 @@ app.listen(port, function () {
     console.log(`http://localhost:${port}`);
 });
 
+let dayjs = require('dayjs');
+
 // Настройка CORS
 let cors = require('cors');
 app.use(cors({ origin: 'http://localhost:5173' }));
-
 
 // Настройка POST-запроса — JSON
 app.use(express.json());
@@ -85,10 +86,16 @@ app.get('/onepage', async function (req, res) {
 
 app.post('/performances/find/data', async function (req, res) {
     let dataFind = req.body.dataFind;
-    
-    let perform = await Performance.find({data: dataFind}).populate("actors");
-
-    res.send(perform);
+    let perform1 = [];
+    let perform = await Performance.find().populate("actors");
+    // console.log(dayjs(perform[0].data).format('YYYY-MM-DD'), dataFind)
+    for (i=0; i<perform.length; i++){
+        
+        if (String(dayjs(perform[i].date).format('YYYY-MM-DD'))==String(dataFind)){
+            perform1.push(perform[i])
+        }
+    }
+    res.send(perform1);
 });
 
 app.post('/performances/find/title', async function (req, res) {

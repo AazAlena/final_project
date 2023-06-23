@@ -19,7 +19,7 @@ export default {
         },
         day(date){
             
-            return ( dayjs(date).format('MM/DD/YYYY'))
+            return ( dayjs(date).format('DD/MM/YYYY'))
         }
     }, 
     mounted(){

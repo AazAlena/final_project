@@ -23,7 +23,7 @@ export default {
             console.log(this.performances)
         },
         day(date){
-            return dayjs(date).format('MM/DD/YYYY в HH:mm')
+            return dayjs(date).format('DD/MM/YYYY в HH:mm')
         },
         goOnePage(perform){
             // console.log(perform.title)
