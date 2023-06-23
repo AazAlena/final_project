@@ -42,7 +42,7 @@ export default {
             {
                 dataFind: this.dataFind
             });
-            this.dataFind = '';
+            // this.dataFind = '';
             this.performances = response.data;
 
         },
@@ -83,7 +83,7 @@ export default {
                 <!-- <span class="input-group-text">Время</span> -->
                 <input v-model="dataFind" @input="search_data"
                 style="background-color: rgb(32, 37, 41); color: rgb(105,117,125) ; width: 400px;" 
-                type="datetime-local" 
+                type="date" 
                 class="form-control">
             </div>
             <div class="col">

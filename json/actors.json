@@ -45,6 +45,9 @@
   "performances": [
     {
       "$oid": "6491b9a72731afa2b639defd"
+    },
+    {
+      "$oid": "6491b9a72731afa2b639defc"
     }
   ],
   "image": "NF"
@@ -61,6 +64,9 @@
     },
     {
       "$oid": "6491b9a72731afa2b639defc"
+    },
+    {
+      "$oid": "6491bc472731afa2b639df1b"
     }
   ],
   "image": "EM"
