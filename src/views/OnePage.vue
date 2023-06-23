@@ -45,11 +45,11 @@ export default {
         <div class="row">
 
             <div class="col" style="width: 40%">
-                <div> <img style="width: 90%; margin: 10px" :src="'/src/assets/'+this.performance.image+'.jpg'" alt=""> </div>
+                <div class=""> <img style="width: 90%; margin: 10px" :src="'/src/assets/'+this.performance.image+'.jpg'" alt=""> </div>
                 <div class="col" style="width: 90%; margin: 10px">
                     <div class="row" style="justify-content: space-around;">
                         <div class="col" v-for="(item, index) in this.performance.actors" style="text-align: center;">
-                            <img :src="'src/assets/'+item.image+'.jpg'" class="portret" alt="">
+                            <img :src="'/src/assets/'+item.image+'.jpg'" class="portret" alt="">
                             <p class="name col">{{item.name}}</p>
                         </div>
                     </div>
@@ -83,7 +83,8 @@ export default {
 
     .portret{
         border-radius: 50%;
-        width: 20px;
+        width: 50px;
+        height: 50px;
     }
 
     .name{
