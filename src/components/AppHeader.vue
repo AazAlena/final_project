@@ -30,7 +30,7 @@
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"  style="margin-right: 20px;" >
-            <img class="bi me-2" width="70" height="70" role="img" aria-label="Bootstrap" src="src/assets/icons8-theatre-50.png" alt="">
+            <img class="bi me-2" width="70" height="70" role="img" aria-label="Bootstrap" src="/src/assets/icons8-theatre-50.png" alt="">
         </a>
         <div class="col" >
             <button @click="goAll" style="margin: 5px;" class="btn all">Все концерты</button>

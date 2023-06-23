@@ -37,7 +37,7 @@ export default {
                     <div><img :src="'src/assets/'+item.image+'.jpg'" class="card-img-top" style="width: 30%; height: auto; border-radius: 5px;" alt="..."></div>
                     <div class="card-body w">
                         <h5 class="card-title">{{item.name}}</h5>
-                        <p>Дата рождения: {{day(item.born)}}</p>
+                        <p style="color: rgb(105,117,125)">Дата рождения: {{day(item.born)}}</p>
                     </div>
                     <h6>Учавствовал(а) в постановках:</h6>
                     <ul class="list-group">

@@ -80,6 +80,7 @@ export default {
         <div class="row" 
         style="margin: 20px 20px 20px 40px; justify-content: center; background-color: rgb(32, 37, 41); padding: 20px 10px; border-radius: 7px">
             <div class="col col-lg-auto mb-3 mb-lg-0 me-lg-3" >
+                <div class="col" ><p style="color: rgb(105,117,125)">Настройка по дате:</p></div>
                 <!-- <span class="input-group-text">Время</span> -->
                 <input v-model="dataFind" @input="search_data"
                 style="background-color: rgb(32, 37, 41); color: rgb(105,117,125) ; width: 400px;" 
@@ -87,6 +88,7 @@ export default {
                 class="form-control">
             </div>
             <div class="col">
+                <div class="col" ><p style="color: rgb(105,117,125)">Поиск по названию:</p></div>
                 <form class="col-lg-auto mb-3 mb-lg-0 me-lg-3">
                     <input v-model="titleFind" @input="search_title" 
                     style="background-color: rgb(32, 37, 41); color: rgb(105,117,125)" 
@@ -101,6 +103,7 @@ export default {
                 <div class="col" >
                     <div class="row">
                         <form class="col-lg-auto mb-3 mb-lg-0 me-lg-3"  >
+                            
                             <input v-model="fromFind" @input="search_price" 
                             style="background-color: rgb(32, 37, 41); color: rgb(105,117,125); margin-bottom: 5px;" 
                             type="search" 
@@ -118,11 +121,11 @@ export default {
             </div>
             </div>
         </div>
-        <div class=" row row-cols-1 row-cols-md-2 g-4" style="justify-content: space-around;">
-            <div v-for="(item, index) in performances " class="card mb-3" style="width: 40%; padding: 0;">
+        <div class="row row-cols-1 row-cols-md-2" style="justify-content: center; gap:10px">
+            <div v-for="(item, index) in performances " class="card mb-3" style="width: 41%; padding: 0;">
                 <div class="row g-0">
-                    <div class="col-md-5" style="justify-content: center;">
-                        <img :src="'/src/assets/'+item.image+'.jpg'" class="img-fluid rounded-start" alt="..." style="border-radius: 5px; display: flex;">
+                    <div class="col-md-5" style="">
+                        <img :src="'/src/assets/'+item.image+'.jpg'" class="img-fluid rounded-start" alt="Картинка к представлению" style="border-radius: 5px; display: flex;">
                     </div>
                     <div class="col-md-7">
                         <div class="card-body">
@@ -137,7 +140,6 @@ export default {
                                 </div>
                             </div>
                         </div>
-                    
                     </div>
                 </div>
             </div>
