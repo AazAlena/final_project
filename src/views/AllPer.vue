@@ -38,33 +38,44 @@ export default {
 
         async search_data(){
             console.log(this.dataFind)
-            let response = await axios.post('/performances/find/data', 
-            {
-                dataFind: this.dataFind
-            });
-            // this.dataFind = '';
-            this.performances = response.data;
+            if (this.dataFind!=""){
+                let response = await axios.post('/performances/find/data', 
+                {
+                    dataFind: this.dataFind
+                });
+                this.performances = response.data;
+            } else {
+                this.loadPerf()
+            }
 
         },
         async search_title(){
             console.log(this.titleFind)
-            let response = await axios.post('/performances/find/title', 
-            {
-                titleFind: this.titleFind
-            });
-            // this.titleFind = '';
-            this.performances = response.data;
+            if (this.titleFind!=""){
+                let response = await axios.post('/performances/find/title', 
+                {
+                    titleFind: this.titleFind
+                });
+                // this.titleFind = '';
+                this.performances = response.data;
+            } else {
+                this.loadPerf()
+            }
         },
         async search_price(){
             console.log(this.fromFind, this.toFind)
-            let response = await axios.post('/performances/find/price', 
-            {
-                fromFind:this.fromFind,
-                toFind:this.toFind
-            });
-            // this.titleFind = '';
-            this.performances = response.data;
-            console.log(this.performances)
+            if (this.toFind!="" || this.fromFind!=""){
+                let response = await axios.post('/performances/find/price', 
+                {
+                    fromFind:this.fromFind,
+                    toFind:this.toFind
+                });
+                // this.titleFind = '';
+                this.performances = response.data;
+                console.log(this.performances)
+            } else {
+                this.loadPerf()
+            }
         }
     
     }, 

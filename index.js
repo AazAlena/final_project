@@ -123,7 +123,7 @@ app.post('/performances/find/price', async function (req, res) {
     if (fromFind && toFind){
         // console.log(fromFind, toFind)
         for (i=0; i< perform.length; i++){
-            if (perform[i].from <= fromFind && perform[i].to <= toFind){
+            if (perform[i].from >= fromFind && perform[i].to <= toFind){
                 perform2.push(perform[i])
             }
         }
